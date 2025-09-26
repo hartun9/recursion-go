@@ -5,9 +5,8 @@ import (
 )
 
 func insertionSort(arr []int32) []int32 {
-	sortedIndex := 0
 	for i := 1; i < len(arr); i++ {
-		for j := 0; j <= sortedIndex; j++ {
+		for j := 0; j <= i-1; j++ {
 			if arr[i] < arr[j] {
 				tmp := arr[i]
 				for k := i - 1; k >= j; k-- {
@@ -17,7 +16,6 @@ func insertionSort(arr []int32) []int32 {
 				break
 			}
 		}
-		sortedIndex++
 	}
 	return arr
 }
