@@ -6,9 +6,9 @@ import (
 
 func insertionSort(arr []int32) []int32 {
 	for i := 1; i < len(arr); i++ {
+		tmp := arr[i]
 		for j := 0; j <= i-1; j++ {
-			if arr[i] < arr[j] {
-				tmp := arr[i]
+			if tmp < arr[j] {
 				for k := i - 1; k >= j; k-- {
 					arr[k+1] = arr[k]
 				}
