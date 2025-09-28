@@ -8,6 +8,11 @@ func findPeakHelper(arr []int32, start int, end int) int32 {
 	if start == end {
 		return arr[start]
 	}
+	if start+1 == end {
+		if arr[start] {
+		}
+	}
 	middle := (start + end) / 2
+
 	return 0
 }
