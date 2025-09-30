@@ -23,11 +23,16 @@ func smallestMissingNumberHelper(arr []int32, start int, end int) (min int32, is
 	}
 	middle := (start + end) / 2
 	minLeft, isPresentLeft := smallestMissingNumberHelper(arr, start, middle)
-	minRight, isPresentRight := smallestMissingNumberHelper(arr, middle+1, end)
 
 	if isPresentLeft {
 		return minLeft, true
+	} else {
+		if arr[middle]+1 != arr[middle+1] {
+			return arr[middle] + 1, true
+		}
 	}
+
+	minRight, isPresentRight := smallestMissingNumberHelper(arr, middle+1, end)
 	if isPresentRight {
 		return minRight, true
 	}
