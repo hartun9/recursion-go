@@ -12,6 +12,7 @@ func TestSmallestMissingNumber(t *testing.T) {
 		{"one missing", []int32{0, 1, 2, 3, 5}, 4},
 		{"last missing", []int32{0, 1, 2, 3, 4}, 5},
 		{"boundary missing", []int32{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 17}, 10},
+		{"zero missing", []int32{2, 3, 5, 6, 7, 8, 9}, 0},
 	}
 
 	for _, tt := range tests {
