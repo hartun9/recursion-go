@@ -1,0 +1,26 @@
+package main
+
+import "testing"
+
+func TestSmallestMissingNumber(t *testing.T) {
+	tests := []struct {
+		name string
+		arr  []int32
+		want int32
+	}{
+		{"two missing", []int32{0, 2, 3, 4, 6}, 1},
+		{"one missing", []int32{0, 1, 2, 3, 5}, 4},
+		{"last missing", []int32{0, 1, 2, 3, 4}, 5},
+		{"boundary missing", []int32{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 17}, 10},
+		{"zero missing", []int32{2, 3, 5, 6, 7, 8, 9}, 0},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got := smallestMissingNumber(tt.arr)
+			if got != tt.want {
+				t.Errorf("smallestMissingNumber(%v) = %d; want %d", tt.arr, got, tt.want)
+			}
+		})
+	}
+}
