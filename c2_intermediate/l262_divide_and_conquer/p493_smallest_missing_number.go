@@ -6,6 +6,9 @@ func smallestMissingNumber(arr []int32) int32 {
 
 func smallestMissingNumberHelper(arr []int32, start int, end int) int32 {
 	if start == end {
+		if start == 0 {
+			return 0
+		}
 		if start != int(arr[start]) {
 			return arr[start] - 1
 		}
